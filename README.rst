@@ -57,7 +57,7 @@ In your Rasa bots run.py just import the channel using
 
 .. code-block:: python
 
-  from rasahub.rasahubchannel import RasahubInputChannel
+  from rasahub_rasa.rasahubchannel import RasahubInputChannel
 
 
 And let the agent handle the channel:
