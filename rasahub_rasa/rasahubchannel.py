@@ -33,7 +33,12 @@ class RasahubInputChannel(InputChannel):
     def _record_messages(self, on_message):
         while True:
             try:
-                text = json.loads(self.socket.recv(1024).decode('utf-8')) # gets message data: message and message_id
+                raw = self.socket.recv(1024)
+                print(raw)
+                raw_decoded = raw.decode('utf-8')
+                print(raw_decoded)
+                text = json.loads(raw_decoded) # gets message data: message and message_id
+                print(text)
                 on_message(UserMessage(text['message'], RasahubOutputChannel(self.socket), text['message_id']))
             except socket.timeout:
                 continue
