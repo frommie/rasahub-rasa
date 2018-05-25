@@ -9,7 +9,8 @@ from rasahub import RasahubPlugin
 
 class RasaConnector(RasahubPlugin):
     """
-    RasaConnector is subclass of RasahubPlugin
+    RasaConnector is subclass of RasahubPlugin to connect to Rasa Cores
+    RasahubInputChannel
     """
 
     def __init__(self, **kwargs):
@@ -65,4 +66,7 @@ class RasaConnector(RasahubPlugin):
             return None
 
     def end(self):
+        """
+        Shuts down socket connection
+        """
         self.con.shutdown(socket.SHUT_RDWR)
