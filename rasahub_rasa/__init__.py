@@ -9,7 +9,8 @@ from rasahub import RasahubPlugin
 
 class RasaConnector(RasahubPlugin):
     """
-    RasaConnector is subclass of RasahubPlugin
+    RasaConnector is subclass of RasahubPlugin to connect to Rasa Cores
+    RasahubInputChannel
     """
 
     def __init__(self, **kwargs):
@@ -32,11 +33,16 @@ class RasaConnector(RasahubPlugin):
         c, addr = rasasocket.accept()
         self.con = c
 
-    def send(self, messagedata):
+    def send(self, messagedata, main_queue):
         """
         Sends message to Rasa via socket connection
+        messagedata is RasahubMessage object
         """
-        self.con.send(json.dumps(messagedata).encode())
+        sending = {
+            'message': messagedata.message,
+            'message_id': messagedata.message_id
+        }
+        self.con.send(json.dumps(sending).encode())
 
     def receive(self):
         """
@@ -52,9 +58,15 @@ class RasaConnector(RasahubPlugin):
             reply = self.con.recv(1024).decode('utf-8')
             reply = json.loads(reply)
             replydata = {
-                'reply': reply['message'],
+                'message': reply['message'],
                 'message_id': reply['message_id']
             }
             return replydata
         else:
             return None
+
+    def end(self):
+        """
+        Shuts down socket connection
+        """
+        self.con.shutdown(socket.SHUT_RDWR)
