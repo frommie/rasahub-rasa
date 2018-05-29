@@ -4,6 +4,8 @@ Rasahub-Rasa
 
 Rasahub-Rasa implements a connector between `Rasahub`_ and `Rasa_Core`_ .
 
+`Documentation`_ .
+
 ----
 
 Prerequisites
@@ -73,6 +75,7 @@ And let the agent handle the channel:
 * License: MIT
 * `PyPi`_ - package installation
 
+.. _Documentation: https://rasahub-rasa.readthedocs.io
 .. _Rasahub: https://github.com/DServSys/rasahub
 .. _Rasa_Core: https://github.com/RasaHQ/rasa_core
 .. _PyPi: https://pypi.python.org/pypi/rasahub
