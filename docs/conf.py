@@ -21,7 +21,7 @@ import os
 import sphinx_rtd_theme
 
 _version__ = None
-exec(open('../rasahub/version.py').read())
+exec(open('../rasahub_rasa/version.py').read())
 
 def run_apidoc(_):
 	from sphinx.apidoc import main
@@ -60,7 +60,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.napoleon',
-    'sphinx.ext.viewcode']
+    'sphinx.ext.viewcode',
 ]
 
 napoleon_google_docstring = False

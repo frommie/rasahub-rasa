@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
 
+__version__ = None
+exec(open("rasahub/version.py").read())
+
 install_requires = [
     'rasahub',
     'rasa-core',
@@ -14,7 +17,7 @@ extras_requires = {
 }
 
 setup(name='rasahub-rasa',
-      version='0.3.1',
+      version=__version__,
       description='Rasa connector for Rasahub',
       url='http://github.com/frommie/rasahub-rasa',
       author='Christian Frommert',
