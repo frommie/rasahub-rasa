@@ -13,22 +13,21 @@ class RasaConnector(RasahubPlugin):
     RasahubInputChannel
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+                 host = '127.0.0.1',
+                 port = 5020):
         """
         Initializes the RasaConnector, establishes the server socket
 
-        :param rasaIP: IP address of Rasa_Core instance
+        :param host: IP address of Rasa_Core instance
         :type name: str.
-        :param rasaPort: Port number set in Rasa_Core RasahubInputChannel
+        :param port: Port number set in Rasa_Core RasahubInputChannel
         :type state: int.
         """
         super(RasaConnector, self).__init__()
 
-        ip = kwargs.get('host', '127.0.0.1')
-        port = int(kwargs.get('port', 5020))
-
         rasasocket = socket.socket()
-        rasasocket.bind((ip, port))
+        rasasocket.bind((host, port))
         rasasocket.listen(5)
         c, addr = rasasocket.accept()
         self.con = c
