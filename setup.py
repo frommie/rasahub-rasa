@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 __version__ = None
-exec(open("rasahub/version.py").read())
+exec(open("rasahub_rasa/version.py").read())
 
 install_requires = [
     'rasahub',
