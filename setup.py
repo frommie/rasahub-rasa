@@ -14,7 +14,7 @@ extras_requires = {
 }
 
 setup(name='rasahub-rasa',
-      version='0.3.0',
+      version='0.3.1',
       description='Rasa connector for Rasahub',
       url='http://github.com/frommie/rasahub-rasa',
       author='Christian Frommert',
