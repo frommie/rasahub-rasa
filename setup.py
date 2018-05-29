@@ -6,7 +6,7 @@ exec(open("rasahub_rasa/version.py").read())
 install_requires = [
     'rasahub',
     'rasa-core',
-    'rasa_nlu==0.11.0',
+    'rasa_nlu',
 ]
 
 tests_requires = [
