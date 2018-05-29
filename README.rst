@@ -2,7 +2,7 @@
 Rasahub-Rasa
 ============
 
-Rasahub-Humhubs implements a connector between Rasahub and `Rasa_Core`_ .
+Rasahub-Rasa implements a connector between `Rasahub`_ and `Rasa_Core`_ .
 
 ----
 
@@ -73,5 +73,6 @@ And let the agent handle the channel:
 * License: MIT
 * `PyPi`_ - package installation
 
+.. _Rasahub: https://github.com/DServSys/rasahub
 .. _Rasa_Core: https://github.com/RasaHQ/rasa_core
 .. _PyPi: https://pypi.python.org/pypi/rasahub
