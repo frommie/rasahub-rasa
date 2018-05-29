@@ -35,8 +35,10 @@ Create file config.yml in working path. Example:
 .. code-block:: yaml
 
   rasa:
-    host: '127.0.0.1'
-    port: 5020
+    package: 'rasahub_rasa'
+    init:
+      host: '127.0.0.1'
+      port: 5020
 
 
 Command-Line API
