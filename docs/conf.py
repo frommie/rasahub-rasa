@@ -29,7 +29,7 @@ def run_apidoc(_):
 	import sys
 	sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 	cur_dir = os.path.abspath(os.path.dirname(__file__))
-	module = os.path.join(cur_dir,"..","rasahub")
+	module = os.path.join(cur_dir,"..","rasahub_rasa")
 	main(['-e', '-o', cur_dir, module, '--force'])
 
 def setup(app):
